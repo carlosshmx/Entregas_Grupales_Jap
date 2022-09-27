@@ -1,0 +1,38 @@
+.main-container{
+    width: 500px;
+    height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-login{
+    display: flex;
+    gap: 10px;
+}
+
+.or-separator{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.or-separator hr{
+    width: 100px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs .btn{
+    margin-top: 10px;
+    width: 100px;
+}
+
+footer{
+    background-color: black;
+}
