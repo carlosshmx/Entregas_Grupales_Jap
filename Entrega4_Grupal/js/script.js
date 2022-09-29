@@ -67,6 +67,13 @@ let showSpinner = function(){
     document.getElementById("offcanvasTopLabel").innerText = serchResult[index].title;
     document.getElementById("item-overview").innerText = serchResult[index].overview;
     showGenres(serchResult[index].genres);
+    document.querySelector(".dropdown-menu").innerHTML = `
+            <li><p class="dropdown-item" href="#">Year: ${new Date(serchResult[index].release_date).getFullYear()}</p></li>
+            <li><p class="dropdown-item" href="#">Runtime: ${serchResult[index].runtime} mins</p></li>
+            <li><p class="dropdown-item" href="#">Budget: $${serchResult[index].budget}</p></li>
+            <li><p class="dropdown-item" href="#">Revenue: $${serchResult[index].revenue}</p></li>
+    
+    `
   }
 
   function showResult(){
@@ -106,12 +113,11 @@ function insertData(){
 
         document.getElementById("btnBuscar").addEventListener("click", ()=>{
             serchResult = [];
-            let inputText = document.getElementById("inputBuscar").value.toLowerCase();
+            let inputText =" " + document.getElementById("inputBuscar").value.toLowerCase();
 
             if(inputText){
                 for(let item of info.data){
-                    if((item.title.toLowerCase()).includes(inputText) || (item.tagline.toLowerCase()).includes(inputText) || (item.overview.toLowerCase()).includes(inputText) || item.genres.some(genre =>{(genre.name.toLowerCase()).includes(inputText)})){
-
+                    if((" " + item.title.toLowerCase()).includes(inputText) || (item.tagline.toLowerCase()).includes(inputText) || (item.overview.toLowerCase()).includes(inputText) || item.genres.some(genre =>{(genre.name.toLowerCase()).includes(inputText)})){
                         serchResult.push(item)
                     }else{
                         for(let genre of item.genres){

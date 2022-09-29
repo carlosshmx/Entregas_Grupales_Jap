@@ -30,17 +30,29 @@
     </div>
 
   
-    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas offcanvas-top " tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
       <div class="offcanvas-header">
         <h5 id="offcanvasTopLabel"> ###### TITULO ###### </h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
+      <div class="offcanvas-body position-relative overflow-visible">
         <p id="item-overview"> #### OVERVIEW #### </p>
         <hr class="solid">
-        <ul class="list-inline" id="item-genres">
+        <div class="d-flex justify-content-between">
+           <ul class="list-inline" id="item-genres">
           #### GENRES ####
         </ul>
+        <div class="dropdown position-absolute end-0 m-2">
+          <button class="btn btn-secondary dropdown-toggle" data-bs-display="static" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            More info
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+           
+
+          </ul>
+        </div>
+        </div>
+       
       </div>
     </div>
   </main>
