@@ -121,7 +121,7 @@ function insertData(){
                         serchResult.push(item)
                     }else{
                         for(let genre of item.genres){
-                            if((genre.name.toLowerCase()).includes(inputText)){
+                            if((" "+ genre.name.toLowerCase()).includes(inputText)){
                                 serchResult.push(item)
                             }
                         }
