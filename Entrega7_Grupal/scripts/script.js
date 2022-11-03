@@ -54,6 +54,17 @@ function createHtml(lista) {
 
 }
 
+function showAlertError() {
+    document.getElementById("alert-danger").classList.add("show");
+    hiddeAlertError();
+}
+
+function hiddeAlertError() {
+    setTimeout( () => document.getElementById("alert-danger").classList.remove("show"), 3000) 
+}
+
+////////////////////FUNCIONES////////////////////////
+
 async function listar() {
     let resultado = await getJSONData();
     console.log(resultado);
@@ -72,8 +83,6 @@ async function obtener(user_id, returResul = false) {
     }else{
         showAlertError();
     }
-    
-    
 }
 
 async function agregar({name, lastname}) {
@@ -97,6 +106,10 @@ async function borrar(id) {
     }
     
 }
+
+/////////////////ACCIONES//////////////////
+
+//////////////AGREGAR////////////////
 
 document.getElementById("btnGet1").addEventListener("click", () =>{
     let input = document.getElementById("inputGet1Id").value;
@@ -126,6 +139,9 @@ document.getElementById("btnPost").addEventListener("click", ()=>{
 
 })
 
+
+////////////////////MODIFICAR//////////////////////////
+
 let modificarIn = document.getElementById("inputPutId")
 
 modificarIn.addEventListener("input", (event)=>{
@@ -136,7 +152,6 @@ modificarIn.addEventListener("input", (event)=>{
     }
 })
 
-///////////////////////////////////////////////////////////////
 
 let inputPutNombre = document.getElementById("inputPutNombre")
 let inputPutApellido = document.getElementById("inputPutApellido")
@@ -177,21 +192,13 @@ document.getElementById("btnPut").addEventListener("click", async ()=>{
     }
 })
 
-function showAlertError() {
-    document.getElementById("alert-danger").classList.add("show");
-    hiddeAlertError();
-}
-
-function hiddeAlertError() {
-    setTimeout( () => document.getElementById("alert-danger").classList.remove("show"), 3000) 
-}
 
 document.getElementById("btnSendChanges").addEventListener("click", ()=>{
     modificar(idPut, {name: inputPutNombre.value, lastname:inputPutApellido.value})
     myModal.toggle();
 })
 
-//////////////////////////////////////////////////////
+///////////////////////ELIMINAR///////////////////////////////
 
 let eliminarIn = document.getElementById("inputDelete")
 
