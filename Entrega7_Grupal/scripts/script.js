@@ -34,6 +34,27 @@ let getJSONData = function (url = "",
         });
 }
 
+// async function request(id="", method='GET', data){
+//     try{
+//         const res = await fetch(url_global + id,
+//             {
+//                 method, headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: data ? JSON.stringify(body) : null
+//             });
+//         if(res.ok){
+//             const data = await res.json();
+//             console.log(data)
+//         }else{
+//             throw new Error("usuario no existe")
+//         }
+//     }catch(error){
+//         console.log('error: ', error.message);
+//     }
+    
+// }
+
 function createHtml(lista) {
     let content = "";
     lista.forEach(e => {
@@ -51,7 +72,6 @@ function createHtml(lista) {
         `
     });
     document.getElementById("results").innerHTML = content
-
 }
 
 function showAlertError() {
